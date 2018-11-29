@@ -1,5 +1,7 @@
 applications:
-- name: pal-tracker-avinash
+- name: pal-tracker
   path: build/libs/pal-tracker.jar
+  routes:
+  - route: pal-tracker-avinash.apps.chicken.pal.pivotal.io
   env:
-    WELCOME_MESSAGE: Hello from Cloud Foundry
+    WELCOME_MESSAGE: Hello from the review environment
