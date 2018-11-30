@@ -20,8 +20,8 @@ jobs:
         - flyway-*/flyway -url="jdbc:mysql://localhost:3306/tracker_test" -locations=filesystem:databases/tracker -user=tracker -password= clean migrate
       script: ./gradlew clean build
       before_deploy:
-        - git config --local user.name "shankar87cse"
-        - git config --local user.email "shankar87cse@gmail.com"
+        - git config --local user.name "Avinash023"
+        - git config --local user.email "Avinash_kumar_Gumpar@dell.com"
         - git tag -f $RELEASE_TAG
       deploy:
         provider: releases
@@ -43,7 +43,7 @@ jobs:
       before_deploy:
         - echo "Deploying $RELEASE_TAG to review"
       before_script:
-        - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s sandbox
+        - cf login -a $CF_API_URL -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s review
         - scripts/migrate-databases.sh pal-tracker .
       deploy:
         provider: cloudfoundry
