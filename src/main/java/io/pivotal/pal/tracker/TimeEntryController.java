@@ -56,9 +56,11 @@ public class TimeEntryController {
     public ResponseEntity<List<TimeEntry>> list() {
         List<TimeEntry> timeEntryList=timeEntryRepository.list();
 
+/*
         if(timeEntryList.isEmpty()){
             return new ResponseEntity<List<TimeEntry>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
         }
+*/
         return new ResponseEntity<List<TimeEntry>>(timeEntryList, HttpStatus.OK);
     }
 
