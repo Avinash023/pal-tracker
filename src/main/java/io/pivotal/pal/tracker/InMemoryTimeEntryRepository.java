@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicLong;
+
 
 public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
 
    private Map<Long,TimeEntry> timeEntryMap= new HashMap<>();
-   //private static final AtomicLong counter = new AtomicLong(0);
+
 
     public TimeEntry find(long timeEntryId) {
 
@@ -23,7 +23,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
     public TimeEntry create(TimeEntry timeEntryToCreate) {
 
-        timeEntryToCreate.setId(1L);
+        timeEntryToCreate.setId(timeEntryMap.size()+1);
 
         timeEntryMap.put(timeEntryToCreate.getId(),timeEntryToCreate);
         return timeEntryToCreate;

@@ -37,7 +37,7 @@ public class TimeEntryController {
         return new ResponseEntity<TimeEntry>(timeEntry, HttpStatus.OK);
     }
 
-    @PostMapping("/time-entries/{timeEntryId}")
+    @DeleteMapping("/time-entries/{timeEntryId}")
     public ResponseEntity<TimeEntry> delete(@PathVariable long timeEntryId) {
         System.out.println("Fetching & Deleting TimeEntry with id " + timeEntryId);
         System.out.println(timeEntryRepository.list());
@@ -52,7 +52,7 @@ public class TimeEntryController {
     }
 
 
-    @GetMapping("/time-entries/")
+    @GetMapping("/time-entries")
     public ResponseEntity<List<TimeEntry>> list() {
         List<TimeEntry> timeEntryList=timeEntryRepository.list();
 
