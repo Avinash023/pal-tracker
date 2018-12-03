@@ -23,11 +23,11 @@ public class PalTrackerApplication {
     TimeEntryRepository timeEntryRepository() {
         return new InMemoryTimeEntryRepository();
     }*/
-    @Autowired
-    private DataSource dataSource;
+  /*  @Autowired
+    private DataSource dataSource;*/
 
     @Bean
-    TimeEntryRepository timeEntryRepository() { return new JdbcTimeEntryRepository(dataSource); }
+    public TimeEntryRepository timeEntryRepository(DataSource dataSource) { return new JdbcTimeEntryRepository(dataSource); }
 
     @Bean
     public ObjectMapper jsonObjectMapper() {
