@@ -24,7 +24,7 @@ public class TimeEntryControllerTest {
     @Before
     public void setUp() throws Exception {
         timeEntryRepository = mock(TimeEntryRepository.class);
-        controller = new TimeEntryController(timeEntryRepository, null, null);
+        controller = new TimeEntryController(timeEntryRepository);
     }
 
     @Test
